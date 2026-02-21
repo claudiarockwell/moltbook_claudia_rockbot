@@ -1,15 +1,66 @@
-# OpenClaw Sales Agent
+# RoseVision CAD Studio - Sales Agent
 
-Automated lead generation, LinkedIn outreach, and Monday.com deal tracking.
+Automated lead generation, LinkedIn outreach, and Monday.com deal tracking for RoseVision CAD Studio.
 
-## Overview
+## Product Overview
 
-This agent automates the B2B sales prospecting workflow:
+**RoseVision CAD Studio** is a software-first defect detection platform that:
+- Trains inspection models directly from your CAD files
+- Deploys on edge hardware (NVIDIA Jetson) with off-the-shelf cameras
+- Catches defects before first article production
+- Replaces brittle rule-based vision systems that break when parts change
 
-1. **Find companies** matching your Ideal Customer Profile (ICP)
-2. **Identify decision makers** with specific titles
-3. **Outreach via LinkedIn** with personalized messages
-4. **Track everything** in Monday.com
+**Tagline:** *"Build inspection from your CAD — before you cut your first mold."*
+
+## Target Market
+
+### Manufacturing Processes
+| Process | Description |
+|---------|-------------|
+| **CNC Machining** | Precision machining of metal/plastic parts |
+| **Cast Metal / Die Casting** | Metal casting with frequent retooling |
+| **Aerospace** | Precision components with strict quality requirements |
+| **Stamping / Sheet Metal** | High-volume metal panels and parts |
+| **Additive Manufacturing / 3D Printing** | 3D printed production parts |
+| **Injection Molding** | High-volume plastic forming |
+
+### Target Titles (Priority Order)
+
+**Tier 1 - Decision Makers:**
+- Director of Quality
+- Director of Automation
+- Director of Manufacturing
+- VP of Manufacturing
+- Quality Manager
+
+**Tier 2 - Influencers:**
+- Quality Supervisor
+- Engineering Manager
+- Operations Manager
+- Plant Manager
+
+**Tier 3 - Champions:**
+- Quality Engineer
+- Manufacturing Engineer
+- Automation Engineer
+
+### Company Profile
+- **Size:** 50-500 employees
+- **Type:** Tier 1/Tier 2 suppliers, contract manufacturers, OEM parts manufacturers
+- **Regions:** Midwest (MI, OH, IN), Pacific Northwest (OR, WA), South (TX, NC)
+
+## Pain Points We Solve
+
+### Pre-Production (Test Market 1)
+- No defect detection until first parts are produced
+- Expensive tooling rework after defects found
+- Long time-to-quality on new product launches
+
+### Production (Test Market 2)
+- High scrap rates and waste
+- Manual inspection errors and inspector fatigue
+- Vision systems that break when parts change
+- Customer escapes and complaints
 
 ## Required Skills
 
@@ -34,7 +85,7 @@ Get your API token from Monday.com:
 openclaw config set skills.monday.apiToken '"your-monday-api-token"'
 ```
 
-Create a board with these columns:
+**Board Columns:**
 | Column | Type | Purpose |
 |--------|------|---------|
 | Name | Text | Lead name |
@@ -42,25 +93,21 @@ Create a board with these columns:
 | Title | Text | Job title |
 | LinkedIn | Link | Profile URL |
 | Status | Status | Lead stage |
+| Manufacturing Process | Dropdown | CNC, Casting, Molding, etc. |
+| Current Inspection | Text | Manual, Vision system, None |
+| Pain Point | Text | What problem they have |
 | Last Contact | Date | Last touchpoint |
 | Notes | Long Text | Conversation notes |
-| Source | Text | How we found them |
 
-Status options:
-- New Lead
-- Connection Sent
-- Connected
-- Message Sent
-- Replied
-- Meeting Scheduled
-- Qualified
-- Not Interested
-- No Response
+**Status Options:**
+- New Lead → Researching → Connection Sent → Connected
+- → Message Sent → Replied → Discovery Call Scheduled
+- → Discovery Complete → Demo Scheduled → Proposal Sent
+- → Negotiating → Won / Lost / Nurture
 
 ### 2. LinkedIn Setup
 
-Enable browser tools in OpenClaw config:
-
+Enable browser tools:
 ```bash
 openclaw config set tools.sandbox.tools.deny '[]'
 openclaw config set agents.defaults.sandbox.mode '"off"'
@@ -73,172 +120,230 @@ openclaw browser open https://linkedin.com
 
 ### 3. Apollo.io Setup (Optional)
 
-For enrichment and contact data:
-
 ```bash
 openclaw config set skills.apollo.apiKey '"your-apollo-api-key"'
 ```
 
-## Ideal Customer Profile (ICP)
+## Prospecting Queries
 
-Edit this section to match your target market:
+### By Manufacturing Process
 
-### Company Criteria
-- **Industry**: Manufacturing, Industrial Automation, Logistics
-- **Size**: 50-500 employees
-- **Revenue**: $10M - $100M
-- **Location**: United States, Canada
-- **Tech indicators**: Uses PLCs, considering automation, legacy systems
-
-### Target Titles
-- Chief Technology Officer (CTO)
-- VP of Engineering
-- VP of Operations
-- Director of Manufacturing
-- Head of Automation
-- Plant Manager
-- Director of Innovation
-
-### Qualifying Signals
-- Recently raised funding
-- Expanding manufacturing capacity
-- Mentioned automation in job postings
-- Attending industry trade shows
-- Using outdated equipment (5+ years)
-
-## Workflow
-
-### Phase 1: Prospecting
-
-Tell the agent:
+**CNC Machining:**
 ```
-Search for manufacturing companies in the Pacific Northwest with 50-200
-employees that might need robotics or automation solutions. Find the
-VP of Engineering or Director of Operations at each company.
+Find Quality Supervisors and Engineering Managers at CNC machining 
+companies with 50-500 employees in the Midwest. Look for companies 
+doing precision manufacturing or aerospace parts.
 ```
 
-### Phase 2: Outreach
-
-Tell the agent:
+**Injection Molding:**
 ```
-Send a LinkedIn connection request to [Name] at [Company].
-Use this angle: [specific reason for reaching out based on research].
-Log the outreach in Monday.com.
+Find Directors of Quality and Quality Managers at injection molding 
+companies. Focus on automotive suppliers and medical device manufacturers 
+in Michigan, Ohio, and Texas.
 ```
 
-### Phase 3: Follow-up Sequence
-
-**Day 0**: Connection request with personalized note
-**Day 3**: If connected, send intro message
-**Day 7**: Follow-up with value (case study, insight)
-**Day 14**: Soft ask for call
-**Day 21**: Final follow-up or move to nurture
-
-### Phase 4: Meeting Booking
-
-When a lead responds positively:
+**Die Casting / Cast Metal:**
 ```
-Send [Name] my Calendly link for a 30-minute discovery call.
-Update their status in Monday.com to "Meeting Scheduled".
+Find Directors of Automation and Manufacturing Engineers at die casting 
+or metal casting companies. Look for automotive and industrial equipment 
+suppliers.
+```
+
+**Stamping:**
+```
+Find Quality Supervisors and Engineering Managers at metal stamping 
+companies producing automotive body panels or appliance parts.
+```
+
+**Additive Manufacturing:**
+```
+Find Directors of Quality at additive manufacturing or 3D printing 
+production facilities. Focus on aerospace and medical device companies.
 ```
 
 ## Message Templates
 
 ### Connection Request (300 char limit)
+
+**For Quality Leaders:**
 ```
-Hi [First Name], I noticed [Company] is [specific observation].
-We help manufacturers like you [specific benefit].
+Hi {{first_name}}, I noticed {{company}} does {{process}} manufacturing. 
+We help quality teams catch defects earlier using CAD-based inspection. 
 Would love to connect and share some insights.
 ```
 
-### Initial Message
+**For Engineering/Automation:**
 ```
-Thanks for connecting, [First Name]!
+Hi {{first_name}}, saw you're leading {{department}} at {{company}}. 
+We've helped similar {{process}} manufacturers build inspection from 
+CAD before first article. Happy to connect.
+```
 
-I've been following [Company]'s work in [industry/area].
-Impressive what you're doing with [specific detail].
+### Initial Message
 
-We recently helped [similar company] achieve [specific result]
-with our [solution type].
+```
+Thanks for connecting, {{first_name}}!
 
-Would you be open to a quick chat about how you're handling
-[relevant challenge]?
+I've been following {{company}}'s work in {{industry}}. Impressive 
+operation you're running.
+
+Quick question: how are you currently handling defect detection on 
+your {{process}} line? Manual inspection, vision system, or a mix?
+
+We recently helped a {{similar_process}} manufacturer reduce their 
+scrap rate by 40% by building inspection models directly from their 
+CAD files — ready before they cut their first mold.
+
+Would love to hear what's working (or not) for you.
 
 Best,
-[Your name]
+Duncan
 ```
 
-### Follow-up
+### Pain Point Follow-Up
+
 ```
-Hi [First Name],
+Hi {{first_name}},
 
-Wanted to share this case study from [similar company] -
-they were facing [challenge] and achieved [result].
+Thought you might find this relevant —
 
-[Link]
+We just published a case study on how {{similar_company}} solved their 
+{{pain_point}} problem. They were dealing with:
+• Vision systems breaking every time parts changed
+• Manual inspectors missing defects due to fatigue
+• 2-week delays getting inspection ready for new products
 
-Thought it might be relevant given [Company]'s focus on [area].
+Now they have inspection models ready from CAD before first article.
 
-Happy to walk you through it if helpful.
+Happy to share the details if useful.
+
+Duncan
+```
+
+### Discovery Call Ask
+
+```
+Hi {{first_name}},
+
+Based on our conversation, it sounds like {{company}} might benefit 
+from what we're doing with CAD-based defect detection.
+
+Would a 20-minute call make sense to explore whether RoseVision could 
+help with your {{specific_challenge}}?
+
+Here's my calendar: {{calendly_link}}
+
+Or just let me know a few times that work.
+
+Best,
+Duncan
 ```
 
 ## Daily Agent Tasks
 
-Set up a cron job to run daily:
+### Morning Prospecting (9 AM)
+```
+Find 10 new leads matching our ICP:
+- Quality Supervisors, Engineering Managers, Directors of Quality, 
+  or Directors of Automation
+- At CNC machining, casting, stamping, injection molding, or additive 
+  manufacturing companies
+- 50-500 employees in Midwest or Pacific Northwest
+- Add qualified leads to Monday.com as "New Lead"
+```
+
+### Outreach (10 AM)
+```
+Send LinkedIn connection requests to qualified leads in Monday.com 
+with status "New Lead". Use personalized connection request based on 
+their manufacturing process. Update status to "Connection Sent".
+```
+
+### Follow-Up (2 PM)
+```
+Check for new LinkedIn connections. Send initial message to anyone 
+who connected in the last 24 hours. Update Monday.com status to 
+"Connected" then "Message Sent".
+
+Follow up with leads per the sequence:
+- Day 3: Value-add message
+- Day 7: Case study
+- Day 14: Soft ask for call
+- Day 21: Final follow-up or move to nurture
+```
+
+### End of Day (5 PM)
+```
+Update Monday.com with all activity from today:
+- New leads added
+- Connections sent/accepted
+- Messages sent
+- Replies received
+- Meetings scheduled
+```
+
+## Cron Schedule
 
 ```bash
-openclaw cron add "0 9 * * 1-5" "sales-prospecting" \
-  --message "Run daily sales prospecting: find 10 new leads matching our ICP, send connection requests to qualified prospects, follow up with connected leads per sequence, update all activity in Monday.com"
+# Morning prospecting
+openclaw cron add "0 9 * * 1-5" "rosevision-prospecting" \
+  --message "Find 10 new leads: Quality Supervisors, Engineering Managers, Directors of Quality/Automation at CNC, casting, stamping, molding, or additive companies. Add to Monday.com."
+
+# Daily outreach
+openclaw cron add "0 10 * * 1-5" "rosevision-outreach" \
+  --message "Send connection requests to New Leads in Monday.com. Update statuses."
+
+# Follow-up sequence
+openclaw cron add "0 14 * * 1-5" "rosevision-followup" \
+  --message "Follow up with connected leads per sequence. Check for replies. Update Monday.com."
 ```
 
 ## Tracking & Metrics
 
-The agent should track in Monday.com:
-
-| Metric | Target |
-|--------|--------|
-| New leads/week | 50 |
-| Connection requests/day | 20 |
+| Metric | Weekly Target |
+|--------|---------------|
+| New leads identified | 50 |
+| Connection requests sent | 30-50 |
 | Connection rate | >30% |
+| Messages sent | 20-30 |
 | Response rate | >15% |
-| Meetings booked/week | 3-5 |
+| Discovery calls booked | 3-5 |
 
-## Safety & Compliance
+## Qualification Questions
 
-### LinkedIn Limits
-- **Connection requests**: Max 100/week (start with 20-30)
-- **Messages**: Max 50/day to new connections
-- **Profile views**: Keep natural patterns
+When a lead responds positively, qualify with:
 
-### Best Practices
-- Always personalize messages
-- Don't spam or use aggressive tactics
-- Respect "Not Interested" responses
-- Keep messaging professional
-- Comply with LinkedIn ToS
+1. **Process:** What manufacturing processes do you run? (CNC, molding, casting, etc.)
+2. **Current state:** How do you handle defect inspection today?
+3. **Pain:** What's the biggest quality challenge you're facing?
+4. **Timeline:** Are you launching any new products/lines in the next 6 months?
+5. **Decision:** Who else would be involved in evaluating a solution like this?
 
-## Troubleshooting
+## Competitive Positioning
 
-### Agent can't access LinkedIn
-```bash
-openclaw browser profiles
-openclaw browser open https://linkedin.com --profile default
-```
+**vs. Rule-based vision systems:**
+"Your system breaks every time the part changes. Ours adapts because it's trained on CAD geometry, not brittle rules."
 
-### Monday.com not updating
-```bash
-openclaw config get skills.monday
-# Verify API token is set
-```
+**vs. AI-in-a-box vendors:**
+"They give you a black box you can't tune. We give you real models, real support, and real integration from engineers who know factories."
 
-### Rate limited on LinkedIn
-- Reduce daily outreach volume
-- Add more randomization to timing
-- Take a 24-48 hour break
+**vs. Manual inspection:**
+"Your inspectors are fatigued and missing defects. Our system catches cosmetic flaws at line speed, consistently."
 
 ## Files
 
-- `SALES_AGENT.md` - This documentation
-- `icp.json` - Ideal Customer Profile definition
-- `templates/` - Message templates
-- `leads/` - Lead export data
+```
+claw/
+├── SALES_AGENT.md              # This documentation
+├── icp.json                    # Ideal Customer Profile
+├── setup.sh                    # Installation script
+├── templates/
+│   ├── connection_request.md   # LinkedIn connection templates
+│   └── follow_up_sequence.md   # Message sequence templates
+├── leads/                      # Exported lead data
+└── RoseVision CAD Studio Bot/  # Product knowledge base
+    ├── Customer Profile.docx
+    ├── brand statement.docx
+    ├── Marketing Copy.docx
+    └── ...
+```

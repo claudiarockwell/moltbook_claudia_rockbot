@@ -1,32 +1,115 @@
-# LinkedIn Connection Request Templates
+# LinkedIn Connection Request Templates - RoseVision CAD Studio
 
 **Note:** LinkedIn limits connection request notes to 300 characters.
 
 ---
 
-## Template 1: Mutual Interest
+## By Target Title
+
+### Quality Supervisor / Quality Manager
 ```
-Hi {{first_name}}, I noticed {{company}} is expanding in {{area}}. We help manufacturers streamline operations with robotics solutions. Would love to connect and share insights from similar projects.
+Hi {{first_name}}, I noticed {{company}} does {{process}} manufacturing. 
+We help quality teams catch defects earlier using CAD-based inspection 
+— no more brittle vision rules. Would love to connect.
 ```
 
-## Template 2: Local Connection
+### Engineering Manager
 ```
-Hi {{first_name}}, fellow Pacific NW professional here! Saw {{company}}'s work in {{industry}} - impressive growth. Always looking to connect with operations leaders in the region.
-```
-
-## Template 3: Content-Based
-```
-Hi {{first_name}}, loved your recent post about {{topic}}. We're working on similar challenges at Rose City Robotics. Would be great to connect and exchange ideas.
+Hi {{first_name}}, saw you're leading engineering at {{company}}. 
+We've helped {{process}} manufacturers build inspection from CAD 
+before first article. Happy to connect and share insights.
 ```
 
-## Template 4: Event/News Hook
+### Director of Quality
 ```
-Hi {{first_name}}, saw {{company}} at {{event/in the news for}}. We specialize in automation for manufacturers like you. Would love to connect and learn more about your initiatives.
+Hi {{first_name}}, fellow quality advocate here. We help manufacturers 
+like {{company}} reduce scrap with CAD-based defect detection. Would 
+love to connect and trade notes.
 ```
 
-## Template 5: Referral/Mutual Connection
+### Director of Automation
 ```
-Hi {{first_name}}, {{mutual_connection}} suggested we connect. They mentioned {{company}} might be exploring automation. I'd love to share how we've helped similar companies.
+Hi {{first_name}}, I see you're driving automation at {{company}}. 
+We're building AI inspection that works with Jetson + off-the-shelf 
+cameras — no vendor lock-in. Happy to connect.
+```
+
+---
+
+## By Manufacturing Process
+
+### CNC Machining
+```
+Hi {{first_name}}, noticed {{company}} does precision CNC work. We help 
+machining shops catch defects from CAD before cutting metal. Would love 
+to connect and share what we're seeing in the industry.
+```
+
+### Injection Molding
+```
+Hi {{first_name}}, I see {{company}} does injection molding. We help 
+molders build inspection from CAD before cutting the first mold — 
+catching defects earlier. Happy to connect.
+```
+
+### Die Casting / Cast Metal
+```
+Hi {{first_name}}, noticed {{company}} does casting work. We help 
+foundries and casters reduce scrap with CAD-based defect detection 
+that adapts to part changes. Would love to connect.
+```
+
+### Stamping / Sheet Metal
+```
+Hi {{first_name}}, I see {{company}} does metal stamping. We help 
+stampers catch defects earlier with inspection models built from CAD. 
+Would love to connect and share insights.
+```
+
+### Additive Manufacturing / 3D Printing
+```
+Hi {{first_name}}, noticed {{company}} does additive manufacturing. 
+We help 3D printing production shops build inspection from CAD files 
+— ready before first part. Happy to connect.
+```
+
+### Aerospace
+```
+Hi {{first_name}}, I see {{company}} does aerospace manufacturing. 
+We help aerospace suppliers meet strict quality requirements with 
+CAD-based defect detection. Would love to connect.
+```
+
+---
+
+## By Pain Point
+
+### Vision Systems Breaking
+```
+Hi {{first_name}}, heard this a lot from {{process}} manufacturers: 
+"Our vision system breaks every time the part changes." We solved 
+that with CAD-based models. Happy to connect and share how.
+```
+
+### Manual Inspection Issues
+```
+Hi {{first_name}}, many {{process}} shops still rely on manual 
+inspection. We help teams catch defects at line speed without 
+inspector fatigue. Would love to connect.
+```
+
+### Scrap / Yield Problems
+```
+Hi {{first_name}}, noticed {{company}} is growing in {{industry}}. 
+We help similar manufacturers cut scrap rates 30-40% with CAD-based 
+inspection. Happy to connect.
+```
+
+### New Product Launch
+```
+Hi {{first_name}}, congrats on {{company}}'s new product launch. 
+We help manufacturers build defect detection from CAD before first 
+article — faster time to quality. Happy to connect.
 ```
 
 ---
@@ -37,8 +120,15 @@ Hi {{first_name}}, {{mutual_connection}} suggested we connect. They mentioned {{
 |----------|--------|---------|
 | `{{first_name}}` | LinkedIn profile | Sarah |
 | `{{company}}` | LinkedIn profile | Acme Manufacturing |
-| `{{area}}` | Company research | automation, robotics |
-| `{{industry}}` | Company profile | food & beverage |
-| `{{topic}}` | Their LinkedIn post | lean manufacturing |
-| `{{event}}` | News/events | Automate 2026 |
-| `{{mutual_connection}}` | LinkedIn | John Smith |
+| `{{process}}` | Company research | injection molding |
+| `{{industry}}` | Company profile | automotive |
+| `{{department}}` | Their LinkedIn | Quality, Engineering |
+
+---
+
+## Character Count Guide
+
+- Keep under 290 characters to be safe
+- Front-load the value proposition
+- Make it specific to their situation
+- End with clear intent to connect

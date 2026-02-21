@@ -1,77 +1,177 @@
 {
-  "name": "Rose City Robotics ICP",
-  "version": "1.0",
-  "description": "Ideal Customer Profile for robotics and automation solutions",
+  "name": "RoseVision CAD Studio ICP",
+  "version": "2.0",
+  "product": "RoseVision CAD Studio",
+  "description": "Software-first defect detection platform trained from CAD models, deployed on edge hardware",
+  
+  "value_proposition": {
+    "tagline": "Build inspection from your CAD — before you cut your first mold",
+    "summary": "Catch defects earlier, reduce scrap, and build reliable inspection into production without black-box vendor lock-in",
+    "key_benefits": [
+      "CAD-to-model conversion - inspection ready before first article",
+      "Works with off-the-shelf cameras and NVIDIA Jetson edge hardware",
+      "No rigid rule-based systems that break when parts change",
+      "Real engineer support, not outsourced helpdesk"
+    ]
+  },
 
   "company": {
     "industries": [
-      "Manufacturing",
-      "Industrial Automation",
-      "Logistics & Warehousing",
-      "Food & Beverage Production",
-      "Electronics Manufacturing",
-      "Automotive Parts",
-      "Aerospace"
+      "CNC Machining",
+      "Cast Metal / Die Casting",
+      "Aerospace",
+      "Stamping / Sheet Metal",
+      "Additive Manufacturing / 3D Printing",
+      "Injection Molding"
+    ],
+    "industry_keywords": [
+      "cnc machining",
+      "die casting",
+      "casting",
+      "aerospace",
+      "stamping",
+      "sheet metal",
+      "additive manufacturing",
+      "3d printing",
+      "injection molding",
+      "plastic molding"
+    ],
+    "product_categories": [
+      "Plastic enclosures & casings",
+      "Automotive interior/exterior parts",
+      "Sheet metal body panels & assemblies",
+      "Cast metal housings & components",
+      "Medical device packaging & parts",
+      "Precision machined parts",
+      "Aerospace components"
     ],
     "employee_count": {
       "min": 50,
       "max": 500
     },
-    "revenue": {
-      "min": 10000000,
-      "max": 100000000,
-      "currency": "USD"
-    },
-    "locations": [
-      "Oregon",
-      "Washington",
-      "California",
-      "United States",
-      "Canada"
+    "company_types": [
+      "Tier 1/Tier 2 suppliers",
+      "Contract manufacturers",
+      "OEM parts manufacturers",
+      "Precision manufacturing firms"
     ],
+    "locations": {
+      "primary": [
+        "Michigan",
+        "Ohio",
+        "Indiana",
+        "Oregon",
+        "Washington",
+        "Texas",
+        "North Carolina"
+      ],
+      "regions": [
+        "Midwest US",
+        "Pacific Northwest",
+        "Southern US"
+      ]
+    },
     "signals": [
-      "Recently raised funding",
-      "Expanding manufacturing capacity",
-      "Job postings mention automation",
-      "Using legacy equipment",
-      "Attending industry trade shows",
-      "Published content about efficiency"
+      "High-mix, medium-to-high-volume production",
+      "Uses CAD in design process",
+      "Manual inspection currently in place",
+      "Vision systems that keep breaking",
+      "High scrap rates / yield issues",
+      "Launching new molds, dies, or production lines",
+      "Customer complaints about defects",
+      "Inspector fatigue issues"
     ],
     "disqualifiers": [
-      "Already has robotics partner",
-      "Company size too small (<20 employees)",
-      "Not in manufacturing/industrial",
-      "Bankruptcy or major layoffs"
+      "Already has working AI vision system",
+      "No CAD-based design process",
+      "Company too small (<50 employees)",
+      "Low-volume/prototype only (no production)"
     ]
   },
 
   "contacts": {
     "target_titles": [
-      "Chief Technology Officer",
-      "CTO",
-      "VP of Engineering",
-      "Vice President of Engineering",
-      "VP of Operations",
-      "Vice President of Operations",
+      "Quality Supervisor",
+      "Engineering Manager",
+      "Director of Quality",
+      "Director of Automation",
+      "Quality Manager",
+      "Quality Engineer",
+      "Manufacturing Engineer",
+      "Automation Engineer",
       "Director of Manufacturing",
-      "Director of Operations",
-      "Head of Automation",
-      "Plant Manager",
-      "Director of Innovation",
-      "Chief Operating Officer",
-      "COO"
+      "VP of Manufacturing",
+      "Operations Manager",
+      "Plant Manager"
     ],
-    "seniority_levels": [
-      "C-Suite",
-      "VP",
-      "Director"
-    ],
+    "title_priority": {
+      "tier_1_decision_makers": [
+        "Director of Quality",
+        "Director of Automation",
+        "Director of Manufacturing",
+        "VP of Manufacturing",
+        "Quality Manager"
+      ],
+      "tier_2_influencers": [
+        "Quality Supervisor",
+        "Engineering Manager",
+        "Operations Manager",
+        "Plant Manager"
+      ],
+      "tier_3_champions": [
+        "Quality Engineer",
+        "Manufacturing Engineer",
+        "Automation Engineer"
+      ]
+    },
     "departments": [
-      "Engineering",
-      "Operations",
-      "Manufacturing",
-      "Production",
-      "Technology"
+      "Quality Assurance",
+      "Quality Control",
+      "Manufacturing Engineering",
+      "Process Engineering",
+      "Factory Automation",
+      "Operations"
+    ]
+  },
+
+  "use_cases": {
+    "test_market_1": {
+      "name": "Pre-production defect detection",
+      "description": "Manufacturers preparing to launch new molds, dies, or production lines - validate part quality before mass production",
+      "target_roles": ["Manufacturing Engineer", "Quality Engineer", "Automation Engineer"],
+      "pain_points": [
+        "No defect detection until first parts are produced",
+        "Expensive tooling rework after defects found",
+        "Long time-to-quality on new lines"
+      ]
+    },
+    "test_market_2": {
+      "name": "Production quality improvement",
+      "description": "Factories with established lines - reduce scrap and improve yield by catching defects in real time",
+      "target_roles": ["Quality Manager", "Director of Manufacturing", "Operations Manager"],
+      "pain_points": [
+        "High scrap rates and waste",
+        "Manual inspection errors and fatigue",
+        "Vision systems break when parts change",
+        "Customer escapes and complaints"
+      ]
+    }
+  },
+
+  "channel_partners": {
+    "types": [
+      {
+        "name": "Industrial Camera Vendors",
+        "why": "Can bundle our software with their cameras for turn-key inspection solutions"
+      },
+      {
+        "name": "Automation Integrators",
+        "why": "Need reliable QA components for factory automation projects"
+      },
+      {
+        "name": "Machine/Robot Cell Builders",
+        "why": "Can differentiate equipment with built-in intelligent defect detection"
+      }
     ]
   },
 
@@ -82,17 +182,23 @@
       "follow_up_sequence_days": [0, 3, 7, 14, 21]
     },
     "personalization_hooks": [
-      "Recent company news",
-      "Shared connections",
-      "Industry trends",
-      "Their LinkedIn posts",
-      "Company growth indicators",
-      "Technology stack"
+      "Their manufacturing process (molding, casting, machining)",
+      "Recent quality issues or recalls in their industry",
+      "New product launches requiring inspection",
+      "Trade shows they attended (Automate, PLASTEC, MD&M)",
+      "Their LinkedIn posts about quality or automation",
+      "Similar companies we've helped"
+    ],
+    "messaging_angles": [
+      "Build inspection from your CAD — before you cut your first mold",
+      "Your QA system shouldn't break every time the part changes",
+      "Software-first defect detection that runs on your Jetson and cameras",
+      "Why rewrite vision rules when your CAD already defines what's correct?"
     ]
   },
 
   "monday_board": {
-    "board_name": "Sales Pipeline",
+    "board_name": "RoseVision Sales Pipeline",
     "statuses": [
       "New Lead",
       "Researching",
@@ -100,8 +206,9 @@
       "Connected",
       "Message Sent",
       "Replied",
-      "Meeting Scheduled",
-      "Qualified",
+      "Discovery Call Scheduled",
+      "Discovery Complete",
+      "Demo Scheduled",
       "Proposal Sent",
       "Negotiating",
       "Won",
@@ -109,6 +216,34 @@
       "Not Interested",
       "No Response",
       "Nurture"
+    ],
+    "custom_fields": [
+      "Manufacturing Process",
+      "Current Inspection Method",
+      "Pain Point",
+      "Use Case",
+      "Company Size",
+      "Decision Timeline"
+    ]
+  },
+
+  "qualification_criteria": {
+    "must_have": [
+      "Uses CAD in design process",
+      "Has production line (not prototype-only)",
+      "Quality/inspection pain point identified"
+    ],
+    "nice_to_have": [
+      "Launching new product/line soon",
+      "Currently using manual inspection",
+      "Has budget authority or access to it",
+      "Expressed interest in AI/automation"
+    ],
+    "disqualifiers": [
+      "No manufacturing (pure design firm)",
+      "Already committed to competitor",
+      "No budget for 12+ months",
+      "Not decision maker and can't intro to one"
     ]
   }
 }
