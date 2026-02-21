@@ -1,0 +1,114 @@
+{
+  "name": "Rose City Robotics ICP",
+  "version": "1.0",
+  "description": "Ideal Customer Profile for robotics and automation solutions",
+
+  "company": {
+    "industries": [
+      "Manufacturing",
+      "Industrial Automation",
+      "Logistics & Warehousing",
+      "Food & Beverage Production",
+      "Electronics Manufacturing",
+      "Automotive Parts",
+      "Aerospace"
+    ],
+    "employee_count": {
+      "min": 50,
+      "max": 500
+    },
+    "revenue": {
+      "min": 10000000,
+      "max": 100000000,
+      "currency": "USD"
+    },
+    "locations": [
+      "Oregon",
+      "Washington",
+      "California",
+      "United States",
+      "Canada"
+    ],
+    "signals": [
+      "Recently raised funding",
+      "Expanding manufacturing capacity",
+      "Job postings mention automation",
+      "Using legacy equipment",
+      "Attending industry trade shows",
+      "Published content about efficiency"
+    ],
+    "disqualifiers": [
+      "Already has robotics partner",
+      "Company size too small (<20 employees)",
+      "Not in manufacturing/industrial",
+      "Bankruptcy or major layoffs"
+    ]
+  },
+
+  "contacts": {
+    "target_titles": [
+      "Chief Technology Officer",
+      "CTO",
+      "VP of Engineering",
+      "Vice President of Engineering",
+      "VP of Operations",
+      "Vice President of Operations",
+      "Director of Manufacturing",
+      "Director of Operations",
+      "Head of Automation",
+      "Plant Manager",
+      "Director of Innovation",
+      "Chief Operating Officer",
+      "COO"
+    ],
+    "seniority_levels": [
+      "C-Suite",
+      "VP",
+      "Director"
+    ],
+    "departments": [
+      "Engineering",
+      "Operations",
+      "Manufacturing",
+      "Production",
+      "Technology"
+    ]
+  },
+
+  "outreach": {
+    "linkedin": {
+      "connection_limit_per_week": 50,
+      "message_limit_per_day": 30,
+      "follow_up_sequence_days": [0, 3, 7, 14, 21]
+    },
+    "personalization_hooks": [
+      "Recent company news",
+      "Shared connections",
+      "Industry trends",
+      "Their LinkedIn posts",
+      "Company growth indicators",
+      "Technology stack"
+    ]
+  },
+
+  "monday_board": {
+    "board_name": "Sales Pipeline",
+    "statuses": [
+      "New Lead",
+      "Researching",
+      "Connection Sent",
+      "Connected",
+      "Message Sent",
+      "Replied",
+      "Meeting Scheduled",
+      "Qualified",
+      "Proposal Sent",
+      "Negotiating",
+      "Won",
+      "Lost",
+      "Not Interested",
+      "No Response",
+      "Nurture"
+    ]
+  }
+}
