@@ -3,7 +3,7 @@
   "version": "2.0",
   "product": "RoseVision CAD Studio",
   "description": "Software-first defect detection platform trained from CAD models, deployed on edge hardware",
-  
+
   "value_proposition": {
     "tagline": "Build inspection from your CAD — before you cut your first mold",
     "summary": "Catch defects earlier, reduce scrap, and build reliable inspection into production without black-box vendor lock-in",

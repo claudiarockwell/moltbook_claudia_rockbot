@@ -130,34 +130,34 @@ openclaw config set skills.apollo.apiKey '"your-apollo-api-key"'
 
 **CNC Machining:**
 ```
-Find Quality Supervisors and Engineering Managers at CNC machining 
-companies with 50-500 employees in the Midwest. Look for companies 
+Find Quality Supervisors and Engineering Managers at CNC machining
+companies with 50-500 employees in the Midwest. Look for companies
 doing precision manufacturing or aerospace parts.
 ```
 
 **Injection Molding:**
 ```
-Find Directors of Quality and Quality Managers at injection molding 
-companies. Focus on automotive suppliers and medical device manufacturers 
+Find Directors of Quality and Quality Managers at injection molding
+companies. Focus on automotive suppliers and medical device manufacturers
 in Michigan, Ohio, and Texas.
 ```
 
 **Die Casting / Cast Metal:**
 ```
-Find Directors of Automation and Manufacturing Engineers at die casting 
-or metal casting companies. Look for automotive and industrial equipment 
+Find Directors of Automation and Manufacturing Engineers at die casting
+or metal casting companies. Look for automotive and industrial equipment
 suppliers.
 ```
 
 **Stamping:**
 ```
-Find Quality Supervisors and Engineering Managers at metal stamping 
+Find Quality Supervisors and Engineering Managers at metal stamping
 companies producing automotive body panels or appliance parts.
 ```
 
 **Additive Manufacturing:**
 ```
-Find Directors of Quality at additive manufacturing or 3D printing 
+Find Directors of Quality at additive manufacturing or 3D printing
 production facilities. Focus on aerospace and medical device companies.
 ```
 
@@ -167,15 +167,15 @@ production facilities. Focus on aerospace and medical device companies.
 
 **For Quality Leaders:**
 ```
-Hi {{first_name}}, I noticed {{company}} does {{process}} manufacturing. 
-We help quality teams catch defects earlier using CAD-based inspection. 
+Hi {{first_name}}, I noticed {{company}} does {{process}} manufacturing.
+We help quality teams catch defects earlier using CAD-based inspection.
 Would love to connect and share some insights.
 ```
 
 **For Engineering/Automation:**
 ```
-Hi {{first_name}}, saw you're leading {{department}} at {{company}}. 
-We've helped similar {{process}} manufacturers build inspection from 
+Hi {{first_name}}, saw you're leading {{department}} at {{company}}.
+We've helped similar {{process}} manufacturers build inspection from
 CAD before first article. Happy to connect.
 ```
 
@@ -184,14 +184,14 @@ CAD before first article. Happy to connect.
 ```
 Thanks for connecting, {{first_name}}!
 
-I've been following {{company}}'s work in {{industry}}. Impressive 
+I've been following {{company}}'s work in {{industry}}. Impressive
 operation you're running.
 
-Quick question: how are you currently handling defect detection on 
+Quick question: how are you currently handling defect detection on
 your {{process}} line? Manual inspection, vision system, or a mix?
 
-We recently helped a {{similar_process}} manufacturer reduce their 
-scrap rate by 40% by building inspection models directly from their 
+We recently helped a {{similar_process}} manufacturer reduce their
+scrap rate by 40% by building inspection models directly from their
 CAD files — ready before they cut their first mold.
 
 Would love to hear what's working (or not) for you.
@@ -207,7 +207,7 @@ Hi {{first_name}},
 
 Thought you might find this relevant —
 
-We just published a case study on how {{similar_company}} solved their 
+We just published a case study on how {{similar_company}} solved their
 {{pain_point}} problem. They were dealing with:
 • Vision systems breaking every time parts changed
 • Manual inspectors missing defects due to fatigue
@@ -225,10 +225,10 @@ Duncan
 ```
 Hi {{first_name}},
 
-Based on our conversation, it sounds like {{company}} might benefit 
+Based on our conversation, it sounds like {{company}} might benefit
 from what we're doing with CAD-based defect detection.
 
-Would a 20-minute call make sense to explore whether RoseVision could 
+Would a 20-minute call make sense to explore whether RoseVision could
 help with your {{specific_challenge}}?
 
 Here's my calendar: {{calendly_link}}
@@ -244,9 +244,9 @@ Duncan
 ### Morning Prospecting (9 AM)
 ```
 Find 10 new leads matching our ICP:
-- Quality Supervisors, Engineering Managers, Directors of Quality, 
+- Quality Supervisors, Engineering Managers, Directors of Quality,
   or Directors of Automation
-- At CNC machining, casting, stamping, injection molding, or additive 
+- At CNC machining, casting, stamping, injection molding, or additive
   manufacturing companies
 - 50-500 employees in Midwest or Pacific Northwest
 - Add qualified leads to Monday.com as "New Lead"
@@ -254,15 +254,15 @@ Find 10 new leads matching our ICP:
 
 ### Outreach (10 AM)
 ```
-Send LinkedIn connection requests to qualified leads in Monday.com 
-with status "New Lead". Use personalized connection request based on 
+Send LinkedIn connection requests to qualified leads in Monday.com
+with status "New Lead". Use personalized connection request based on
 their manufacturing process. Update status to "Connection Sent".
 ```
 
 ### Follow-Up (2 PM)
 ```
-Check for new LinkedIn connections. Send initial message to anyone 
-who connected in the last 24 hours. Update Monday.com status to 
+Check for new LinkedIn connections. Send initial message to anyone
+who connected in the last 24 hours. Update Monday.com status to
 "Connected" then "Message Sent".
 
 Follow up with leads per the sequence:
