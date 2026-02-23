@@ -77,13 +77,14 @@ npx clawhub install agent-browser
 
 ### 1. Monday.com Setup
 
-Get your API token from Monday.com:
-- Go to your avatar → Admin → API
-- Generate a new token
+API access is handled via **Maton** (OAuth proxy). The following env vars must be set in `~/.zshrc`:
 
 ```bash
-openclaw config set skills.monday.apiToken '"your-monday-api-token"'
+export MATON_API_KEY="..."      # Used by the monday skill (Authorization: Bearer)
+export MONDAY_API_TOKEN="..."   # Direct Monday.com API token (backup / reference)
 ```
+
+The `monday` skill reads `MATON_API_KEY` from the environment automatically. No `openclaw config set` needed.
 
 **Board Columns:**
 | Column | Type | Purpose |
@@ -120,8 +121,10 @@ openclaw browser open https://linkedin.com
 
 ### 3. Apollo.io Setup (Optional)
 
+Set in `~/.zshrc`:
+
 ```bash
-openclaw config set skills.apollo.apiKey '"your-apollo-api-key"'
+export APOLLO_API_KEY="..."   # Apollo.io API key for lead enrichment
 ```
 
 ## Prospecting Queries
