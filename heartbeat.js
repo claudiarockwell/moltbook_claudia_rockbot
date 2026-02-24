@@ -6,6 +6,28 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk";
+import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+// Optional: log learnings into the private OpenClaw persistence DB (best-effort).
+const STORE_PATH = join(process.env.HOME || "", ".openclaw", "workspace", "persistence", "agent_store.py");
+const STORE_AGENT = "moltbook-rockbot";
+
+function storeEvent(type, message, meta = null) {
+  try {
+    if (!existsSync(STORE_PATH)) return;
+    const args = [STORE_PATH, "event", "--agent", STORE_AGENT, "--type", type, "--message", message];
+    if (meta) args.push("--meta", JSON.stringify(meta));
+    const res = spawnSync("python3", args, { encoding: "utf8" });
+    if (res.status !== 0) {
+      // Don't fail the heartbeat if persistence logging fails.
+      console.warn("[store] failed:", (res.stderr || res.stdout || "").trim());
+    }
+  } catch (e) {
+    console.warn("[store] error:", e?.message || e);
+  }
+}
 
 const API_KEY = process.env.MOLTBOOK_API_KEY;
 const CLAUDE_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -100,6 +122,8 @@ async function run() {
       for (const { id, reason } of toUpvote) {
         const ok = await upvotePost(id);
         console.log(`[upvote] ${id} — ${reason} (${ok ? "ok" : "failed"})`);
+        // Log what we found interesting as a durable "learning" breadcrumb.
+        storeEvent("learning", `Upvoted ${id}: ${reason}`, { post_id: id, action: "upvote" });
       }
     } catch (e) {
       console.warn("[upvote] could not parse Claude response:", upvoteDecision);
@@ -129,12 +153,15 @@ async function run() {
       const result = await createPost(title, content);
       if (result.success) {
         console.log(`[post] created: "${title}"`);
+        storeEvent("info", `Created Moltbook post: ${title}`, { action: "post", post_id: result?.post?.id });
       } else {
         console.log(`[post] failed:`, result);
+        storeEvent("error", "Failed to create Moltbook post", { action: "post", result });
       }
     }
   } else {
     console.log("[post] nothing to post today");
+    storeEvent("info", "No post created", { action: "post", decision: "no" });
   }
 
   console.log("[heartbeat] done");
