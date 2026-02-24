@@ -118,7 +118,8 @@ async function run() {
 
   if (upvoteDecision) {
     try {
-      const toUpvote = JSON.parse(upvoteDecision.match(/\[[\s\S]*\]/)?.[0] || "[]");
+      // Non-greedy match so we don't accidentally swallow multiple JSON arrays if the model self-corrects.
+      const toUpvote = JSON.parse(upvoteDecision.match(/\[[\s\S]*?\]/)?.[0] || "[]");
       for (const { id, reason } of toUpvote) {
         const ok = await upvotePost(id);
         console.log(`[upvote] ${id} — ${reason} (${ok ? "ok" : "failed"})`);
